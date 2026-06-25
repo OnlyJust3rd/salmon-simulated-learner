@@ -1,0 +1,57 @@
+{
+  "name": "test-2",
+  "description": "DAG path database-system -> postgresql over the paths/1 curriculum (medium prose), evaluated for three learner profiles. Thresholds calibrated to this prose corpus; sweep them to re-tune.",
+  "graph": {
+    "dir": "paths/1",
+    "definition_subdir": "mediums"
+  },
+  "vectorizer": {
+    "use_idf": false,
+    "stop_words": "english",
+    "lemmatize": true
+  },
+  "thresholds": {
+    "low": 0.85,
+    "high": 0.9,
+    "similarity": 0.3
+  },
+  "noise": {
+    "level": 1.2,
+    "seed": 42
+  },
+  "background": {
+    "source": "20newsgroups",
+    "n_docs": 50,
+    "seed": 42,
+    "categories": null
+  },
+  "acquisition": {
+    "top_k_coef": 10
+  },
+  "test_path": [
+    "L1-define-database-system",
+    "L1-relation-data-model",
+
+    "L1-define-relational-database",
+    "L1-define-database-management-system",
+    "L1-define-nosql",
+
+    "L1-define-relational-database-management-system",
+    "L1-recognize-sql",
+    "L1-define-graph-database",
+
+    "L1-recognize-postgresql",
+    "L1-recognize-neo4j"
+  ],
+  "profiles": {
+    "idiot": ["L1-noise"],
+    "highschool-normie": ["L1-noise", "L1-highschool-math", "L1-highschool-it"],
+    "coding-since-12": [
+      "L1-noise",
+      "L1-highschool-math",
+      "L1-highschool-it",
+      "L1-define-database-system",
+      "L1-define-relational-database"
+    ]
+  }
+}

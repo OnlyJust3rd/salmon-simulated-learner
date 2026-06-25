@@ -1,0 +1,36 @@
+{
+  "name": "test-1",
+  "description": "DAG path database-system -> postgresql over the paths/1 curriculum (medium prose), evaluated for three learner profiles. Thresholds calibrated to this prose corpus; sweep them to re-tune.",
+  "graph": {
+    "dir": "paths/1",
+    "definition_subdir": "mediums"
+  },
+  "vectorizer": {
+    "use_idf": false,
+    "stop_words": "english",
+    "lemmatize": true
+  },
+  "thresholds": {
+    "low": 0.9,
+    "high": 0.96,
+    "similarity": 0.1
+  },
+  "test_path": [
+    "L1-define-database-system",
+    "L1-define-relational-database",
+    "L1-define-database-management-system",
+    "L1-define-relational-database-management-system",
+    "L1-recognize-sql",
+    "L1-recognize-postgresql"
+  ],
+  "profiles": {
+    "idiot": [],
+    "highschool-normie": ["L1-highschool-math", "L1-highschool-it"],
+    "coding-since-12-kid": [
+      "L1-highschool-math",
+      "L1-highschool-it",
+      "L1-define-database-system",
+      "L1-define-relational-database"
+    ]
+  }
+}

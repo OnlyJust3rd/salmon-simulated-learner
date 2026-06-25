@@ -1,0 +1,35 @@
+flowchart LR
+    DBMS[Database Management System]
+    RDBMS[Relational Database Management System]
+    DBS[Database System]
+    NOSQL[NoSQL Database]
+    RD[Relational Database]
+    MONGO[MongoDB]
+    MYSQL[MySQL]
+    PG[PostgreSQL]
+    SQL[Structured Query Language]
+    GDB[Graph Database]
+    DOC[Document Database]
+    NEO4J[Neo4j]
+
+    DBS --> DBMS
+    DBS --> NOSQL
+    DBS --> RD
+
+    DBMS --> RDBMS
+    DBMS --> MONGO
+    DBMS --> NEO4J
+
+    RD --> RDBMS
+    RD --> SQL
+
+    RDBMS --> MYSQL
+    RDBMS --> PG
+
+    NOSQL --> DOC
+    NOSQL --> GDB
+    DOC --> MONGO
+    GDB --> NEO4J
+
+    SQL --> MYSQL
+    SQL --> PG
